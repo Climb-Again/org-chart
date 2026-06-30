@@ -4,7 +4,21 @@ const path = require('path');
 
 const app = express();
 const PORT = process.env.PORT || 3000;
-const DATA_FILE = path.join(__dirname, 'data.json');
+// Persist data on a Railway volume if DATA_DIR is set, else fall back to app dir.
+const DATA_DIR = process.env.DATA_DIR || __dirname;
+const DATA_FILE = path.join(DATA_DIR, 'data.json');
+const SEED_FILE = path.join(__dirname, 'data.json');
+
+// On first boot with an empty volume, seed it from the bundled data.json.
+try {
+  if (path.resolve(DATA_DIR) !== path.resolve(__dirname)) {
+    fs.mkdirSync(DATA_DIR, { recursive: true });
+    if (!fs.existsSync(DATA_FILE) && fs.existsSync(SEED_FILE)) {
+      fs.copyFileSync(SEED_FILE, DATA_FILE);
+      console.log('✓ Seeded persistent data store at', DATA_FILE);
+    }
+  }
+} catch (e) { console.error('Volume seed error:', e); }
 
 // Simple password protection
 const PASSWORD = process.env.ORGCHART_PASSWORD || 'climb2024';

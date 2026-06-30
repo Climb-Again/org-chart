@@ -84,7 +84,9 @@
     "name": "Ionela Oprea",
     "role": "Director centru Iași",
     "manager": "n9",
-    "additionalManagers": ["n30"],
+    "additionalManagers": [
+      "n30"
+    ],
     "customColor": "attention"
   },
   {
@@ -201,14 +203,22 @@
   {
     "id": "n30",
     "name": "To Be Hired",
-    "role": "Fractional CFO",
+    "role": "Fractional CFO / Analist financiar",
     "manager": "n1",
-    "customColor": "gray"
+    "customColor": "gray",
+    "description": ""
   },
   {
     "id": "n29",
     "name": "Radu Ionescu",
     "role": "Vicepreședinte",
     "manager": ""
+  },
+  {
+    "id": "n31",
+    "name": "Monica Bujoreanu",
+    "role": "contabil",
+    "manager": "n30",
+    "description": ""
   }
 ]
