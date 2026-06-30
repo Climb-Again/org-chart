@@ -33,8 +33,9 @@
     "id": "n6",
     "name": "Mona Calinescu",
     "role": "Director/manager comunicare",
-    "manager": "n3",
-    "customColor": "green"
+    "manager": "n29",
+    "customColor": "green",
+    "levelOffset": 1
   },
   {
     "id": "n7",
@@ -46,7 +47,7 @@
     "id": "n8",
     "name": "Andreea Cucu",
     "role": "Specialist comunicare",
-    "manager": "n6"
+    "manager": "n31"
   },
   {
     "id": "n9",
@@ -67,13 +68,6 @@
     "manager": "n9"
   },
   {
-    "id": "n11",
-    "name": "TBH / Ana in 2027?",
-    "role": "Manager commercial",
-    "manager": "n9",
-    "customColor": "gray"
-  },
-  {
     "id": "n12",
     "name": "Constantin Voicescu",
     "role": "Kinetoterapeut",
@@ -82,9 +76,8 @@
   {
     "id": "n14",
     "name": "Ionela Oprea",
-    "role": "Director centru Iași",
+    "role": "Director centru Iași + Manager comercial",
     "manager": "n9",
-    "additionalManagers": ["n30"],
     "customColor": "attention"
   },
   {
@@ -104,13 +97,13 @@
     "id": "n17",
     "name": "Ana Nedelcu",
     "role": "Manager commercial București",
-    "manager": "n11"
+    "manager": "n14"
   },
   {
     "id": "n18",
     "name": "Noris Popovici",
     "role": "Receptioner Arad",
-    "manager": "n11"
+    "manager": "n14"
   },
   {
     "id": "n19",
@@ -200,15 +193,22 @@
   },
   {
     "id": "n30",
-    "name": "To Be Hired",
+    "name": "Mădălina",
     "role": "Fractional CFO",
-    "manager": "n1",
-    "customColor": "gray"
+    "manager": "n29"
   },
   {
     "id": "n29",
     "name": "Radu Ionescu",
     "role": "Vicepreședinte",
     "manager": ""
+  },
+  {
+    "id": "n31",
+    "name": "Irina",
+    "role": "Manager comunicare",
+    "manager": "n29",
+    "levelOffset": 1,
+    "customColor": "green"
   }
 ]
