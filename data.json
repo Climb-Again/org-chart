@@ -6,6 +6,12 @@
     "manager": ""
   },
   {
+    "id": "n29",
+    "name": "Radu Ionescu",
+    "role": "Vicepreședinte",
+    "manager": ""
+  },
+  {
     "id": "n3",
     "name": "Cristina Pascanu",
     "role": "Director fundraising",
@@ -46,34 +52,12 @@
     "customColor": "green"
   },
   {
-    "id": "n6",
-    "name": "Mona Calinescu",
-    "role": "Director/manager comunicare",
-    "manager": "n29",
-    "customColor": "purple",
-    "levelOffset": 1
-  },
-  {
-    "id": "n31",
-    "name": "Irina",
-    "role": "Manager comunicare",
-    "manager": "n29",
+    "id": "n28",
+    "name": "Adrian Badea",
+    "role": "Șef Șantier / tabără Nucșoara",
+    "manager": "n1",
     "levelOffset": 1,
-    "customColor": "purple"
-  },
-  {
-    "id": "n7",
-    "name": "Andreea Bucurica",
-    "role": "Specialist comunicare",
-    "manager": "n6",
-    "customColor": "purple"
-  },
-  {
-    "id": "n8",
-    "name": "Andreea Cucu",
-    "role": "Specialist comunicare",
-    "manager": "n31",
-    "customColor": "purple"
+    "customColor": "urgent"
   },
   {
     "id": "n10",
@@ -101,19 +85,20 @@
     "customColor": "attention"
   },
   {
-    "id": "n15",
-    "name": "Liliana Badea",
-    "role": "Femeie de serviciu",
-    "manager": "n10",
-    "customColor": "",
-    "levelOffset": 2
+    "id": "n6",
+    "name": "Mona Calinescu",
+    "role": "Director/manager comunicare",
+    "manager": "n29",
+    "customColor": "purple",
+    "levelOffset": 1
   },
   {
-    "id": "n16",
-    "name": "Cristina Pisica",
-    "role": "Lucrator social (instructor TSA)",
-    "manager": "n10",
-    "levelOffset": 2
+    "id": "n31",
+    "name": "Irina",
+    "role": "Manager comunicare",
+    "manager": "n29",
+    "levelOffset": 1,
+    "customColor": "purple"
   },
   {
     "id": "n17",
@@ -122,18 +107,30 @@
     "manager": "n14"
   },
   {
-    "id": "n18",
-    "name": "Noris Popovici",
-    "role": "Receptioner Arad",
-    "manager": "n14",
-    "levelOffset": 2
+    "id": "n23",
+    "name": "Alexandra?",
+    "role": "Manager dizab",
+    "manager": "n14"
   },
   {
-    "id": "n19",
-    "name": "Georgeta Ghengea",
-    "role": "Receptioner",
-    "manager": "n17",
-    "levelOffset": 1
+    "id": "n24",
+    "name": "Florin Mirea",
+    "role": "Coordonator administrativ",
+    "manager": "n14"
+  },
+  {
+    "id": "n7",
+    "name": "Andreea Bucurica",
+    "role": "Specialist comunicare",
+    "manager": "n6",
+    "customColor": "purple"
+  },
+  {
+    "id": "n8",
+    "name": "Andreea Cucu",
+    "role": "Specialist comunicare",
+    "manager": "n31",
+    "customColor": "purple"
   },
   {
     "id": "n20",
@@ -166,18 +163,6 @@
     "manager": "n17"
   },
   {
-    "id": "n23",
-    "name": "Alexandra?",
-    "role": "Manager dizab",
-    "manager": "n14"
-  },
-  {
-    "id": "n24",
-    "name": "Florin Mirea",
-    "role": "Coordonator administrativ",
-    "manager": "n14"
-  },
-  {
     "id": "n25",
     "name": "Daniel Andrei",
     "role": "Instructor",
@@ -196,6 +181,35 @@
     "manager": "n24"
   },
   {
+    "id": "n15",
+    "name": "Liliana Badea",
+    "role": "Femeie de serviciu",
+    "manager": "n10",
+    "customColor": "",
+    "levelOffset": 2
+  },
+  {
+    "id": "n16",
+    "name": "Cristina Pisica",
+    "role": "Lucrator social (instructor TSA)",
+    "manager": "n10",
+    "levelOffset": 2
+  },
+  {
+    "id": "n18",
+    "name": "Noris Popovici",
+    "role": "Receptioner Arad",
+    "manager": "n14",
+    "levelOffset": 2
+  },
+  {
+    "id": "n19",
+    "name": "Georgeta Ghengea",
+    "role": "Receptioner",
+    "manager": "n17",
+    "levelOffset": 1
+  },
+  {
     "id": "n27",
     "name": "Denisa",
     "role": "Receptioner",
@@ -208,19 +222,5 @@
     "role": "Receptioner",
     "manager": "n14",
     "levelOffset": 2
-  },
-  {
-    "id": "n28",
-    "name": "Adrian Badea",
-    "role": "Șef Șantier / tabără Nucșoara",
-    "manager": "n1",
-    "levelOffset": 1,
-    "customColor": "urgent"
-  },
-  {
-    "id": "n29",
-    "name": "Radu Ionescu",
-    "role": "Vicepreședinte",
-    "manager": ""
   }
 ]
