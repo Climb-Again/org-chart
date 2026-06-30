@@ -38,6 +38,14 @@
     "levelOffset": 1
   },
   {
+    "id": "n31",
+    "name": "Irina",
+    "role": "Manager comunicare",
+    "manager": "n29",
+    "levelOffset": 1,
+    "customColor": "green"
+  },
+  {
     "id": "n7",
     "name": "Andreea Bucurica",
     "role": "Specialist comunicare",
@@ -202,13 +210,5 @@
     "name": "Radu Ionescu",
     "role": "Vicepreședinte",
     "manager": ""
-  },
-  {
-    "id": "n31",
-    "name": "Irina",
-    "role": "Manager comunicare",
-    "manager": "n29",
-    "levelOffset": 1,
-    "customColor": "green"
   }
 ]
