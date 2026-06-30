@@ -313,10 +313,10 @@
       <div class="color-swatches" id="color-swatches"></div>
     </div>
     <div class="modal-actions">
-      <button class="btn" onclick="moveNodeLeft()" title="Move left among siblings">
+      <button class="btn" onclick="moveNodeLeft()" title="Mută la stânga">
         <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M10 3l-5 4 5 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
       </button>
-      <button class="btn" onclick="moveNodeRight()" title="Move right among siblings">
+      <button class="btn" onclick="moveNodeRight()" title="Mută la dreapta">
         <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M4 3l5 4-5 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
       </button>
       <button class="btn btn-primary" onclick="saveEdit()" style="margin-left: auto;">Salvează</button>
@@ -624,36 +624,47 @@ function deleteById(id) {
   toast('Șters');
 }
 
+// --- Move by visual row position, keeping departments (same-manager groups) intact ---
+function rowDepthMap() { const memo = {}; nodes.forEach(x => getDepth(x.id, memo)); return memo; }
+function rowOrder(n, memo) { const d = memo[n.id]; return nodes.filter(x => memo[x.id] === d); }
+function arrSwap(a, b) { const ia = nodes.indexOf(a), ib = nodes.indexOf(b); [nodes[ia], nodes[ib]] = [nodes[ib], nodes[ia]]; }
+function arrMove(n, targetId, after) { nodes.splice(nodes.indexOf(n), 1); const ti = nodes.findIndex(x => x.id === targetId); nodes.splice(after ? ti + 1 : ti, 0, n); }
+function afterMove() { renderChart(); renderTable(); saveData(); }
+
 function moveNodeLeft() {
   const n = getNode(editId);
   if (!n) return;
-  const siblings = nodes.filter(s => s.manager === n.manager && s.id !== n.id);
-  const currentIndex = nodes.indexOf(n);
-  const firstSiblingIndex = Math.min(...siblings.map(s => nodes.indexOf(s)));
-  if (currentIndex > firstSiblingIndex) {
-    const prevNode = nodes[currentIndex - 1];
-    if (prevNode && prevNode.manager === n.manager) {
-      [nodes[currentIndex], nodes[currentIndex - 1]] = [nodes[currentIndex - 1], nodes[currentIndex]];
-      renderChart(); renderTable(); saveData();
-      toast('↑ Moved');
-    }
+  const memo = rowDepthMap();
+  const row = rowOrder(n, memo);
+  const ri = row.indexOf(n);
+  if (ri <= 0) { toast('Deja la margine'); return; }
+  const prev = row[ri - 1];
+  if (prev.manager === n.manager) {
+    arrSwap(n, prev);                                  // reorder within own department
+  } else {
+    let j = ri - 1;                                    // jump the whole neighbouring department
+    while (j >= 0 && row[j].manager === prev.manager) j--;
+    arrMove(n, row[j + 1].id, false);
   }
+  afterMove(); toast('← Mutat');
 }
 
 function moveNodeRight() {
   const n = getNode(editId);
   if (!n) return;
-  const siblings = nodes.filter(s => s.manager === n.manager && s.id !== n.id);
-  const currentIndex = nodes.indexOf(n);
-  const lastSiblingIndex = Math.max(...siblings.map(s => nodes.indexOf(s)));
-  if (currentIndex < lastSiblingIndex) {
-    const nextNode = nodes[currentIndex + 1];
-    if (nextNode && nextNode.manager === n.manager) {
-      [nodes[currentIndex], nodes[currentIndex + 1]] = [nodes[currentIndex + 1], nodes[currentIndex]];
-      renderChart(); renderTable(); saveData();
-      toast('↓ Moved');
-    }
+  const memo = rowDepthMap();
+  const row = rowOrder(n, memo);
+  const ri = row.indexOf(n);
+  if (ri < 0 || ri >= row.length - 1) { toast('Deja la margine'); return; }
+  const next = row[ri + 1];
+  if (next.manager === n.manager) {
+    arrSwap(n, next);                                  // reorder within own department
+  } else {
+    let j = ri + 1;                                    // jump the whole neighbouring department
+    while (j < row.length && row[j].manager === next.manager) j++;
+    arrMove(n, row[j - 1].id, true);
   }
+  afterMove(); toast('→ Mutat');
 }
 
 function addNode() {
