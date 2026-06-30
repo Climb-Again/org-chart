@@ -75,7 +75,8 @@
     "id": "n12",
     "name": "Constantin Voicescu",
     "role": "Kinetoterapeut",
-    "manager": "n9"
+    "manager": "n9",
+    "levelOffset": 1
   },
   {
     "id": "n14",

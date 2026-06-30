@@ -350,6 +350,24 @@ function getDepth(id, memo = {}) {
 
 function trunc(s, len) { return s && s.length > len ? s.slice(0, len - 1) + '…' : (s || ''); }
 
+function wrapRole(s, maxLen, maxLines) {
+  if (!s) return [];
+  const words = String(s).split(/\s+/).filter(Boolean);
+  const lines = []; let cur = '';
+  for (const w of words) {
+    const t = cur ? cur + ' ' + w : w;
+    if (t.length <= maxLen) cur = t;
+    else { if (cur) lines.push(cur); cur = w; }
+  }
+  if (cur) lines.push(cur);
+  if (lines.length > maxLines) {
+    let last = lines.slice(maxLines - 1).join(' ');
+    if (last.length > maxLen) last = last.slice(0, maxLen - 1) + '…';
+    lines.length = maxLines - 1; lines.push(last);
+  }
+  return lines;
+}
+
 function initials(name) {
   return name.split(/[\s\/]+/).map(w => w[0] || '').join('').slice(0, 2).toUpperCase();
 }
@@ -417,7 +435,7 @@ function renderChart() {
   const byLevel = {};
   nodes.forEach(n => { const d = memo[n.id] || 0; (byLevel[d] || (byLevel[d] = [])).push(n); });
 
-  const NW = 164, NH = 68, GX = 18, GY = 88;
+  const NW = 178, NH = 78, GX = 18, GY = 88;
   const maxInLevel = Math.max(...Object.values(byLevel).map(a => a.length));
   const svgW = Math.max(800, maxInLevel * (NW + GX) + 60);
   const svgH = (maxD + 1) * (NH + GY) + 60;
@@ -467,7 +485,7 @@ function renderChart() {
     const nameFW = isManager ? '700' : '600';
     const init = initials(n.name);
     const nameText = trunc(n.name, 19);
-    const roleText = trunc(n.role, 24);
+    const roleLines = wrapRole(n.role, 22, 2);
 
     const hasDesc = !!(n.description && n.description.trim());
     const infoX = x + NW - 12, infoY = y + 12;
@@ -477,8 +495,8 @@ function renderChart() {
       <rect class="node-rect" x="${x}" y="${y}" width="${NW}" height="${NH}" rx="9" fill="${fill}" stroke="${pal.stroke}" stroke-width="${strokeW}"/>
       <circle cx="${x+22}" cy="${y+NH/2}" r="15" fill="${pal.avatar}"/>
       <text x="${x+22}" y="${y+NH/2+5}" text-anchor="middle" fill="${pal.avtext}" font-size="11" font-weight="600" font-family="DM Sans,sans-serif">${init}</text>
-      <text x="${x+44}" y="${y+27}" fill="${pal.text}" font-size="12" font-weight="${nameFW}" font-family="DM Sans,sans-serif">${nameText}</text>
-      ${roleText ? `<text x="${x+44}" y="${y+44}" fill="${pal.sub}" font-size="11" font-family="DM Sans,sans-serif">${roleText}</text>` : ''}
+      <text x="${x+44}" y="${y+26}" fill="${pal.text}" font-size="12" font-weight="${nameFW}" font-family="DM Sans,sans-serif">${nameText}</text>
+      ${roleLines.map((ln, i) => `<text x="${x+44}" y="${y+44+i*13}" fill="${pal.sub}" font-size="10" font-family="DM Sans,sans-serif">${ln}</text>`).join('')}
       ${hasDesc ? `<g onclick="event.stopPropagation()" onmouseenter="showDescTooltip(event,'${n.id}')" onmouseleave="hideDescTooltip()" style="cursor:default">
         <circle cx="${infoX}" cy="${infoY}" r="7.5" fill="${pal.avatar}" opacity="0.9"/>
         <text x="${infoX}" y="${infoY+4}" text-anchor="middle" fill="${pal.avtext}" font-size="9" font-weight="700" font-family="DM Sans,sans-serif">i</text>
