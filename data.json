@@ -6,35 +6,51 @@
     "manager": ""
   },
   {
-    "id": "n2",
-    "name": "Daniel Mihalache",
-    "role": "Director Dezvoltare",
-    "manager": "n1"
-  },
-  {
     "id": "n3",
     "name": "Cristina Pascanu",
     "role": "Director fundraising",
+    "manager": "n1",
+    "customColor": "green"
+  },
+  {
+    "id": "n2",
+    "name": "Daniel Mihalache",
+    "role": "Director Dezvoltare",
+    "manager": "n1",
+    "customColor": "blue"
+  },
+  {
+    "id": "n30",
+    "name": "Mădălina",
+    "role": "Fractional CFO",
+    "manager": "n29"
+  },
+  {
+    "id": "n9",
+    "name": "Antoaneta Barbu",
+    "role": "Director program dizabilitate + lot",
     "manager": "n1"
   },
   {
     "id": "n4",
     "name": "Violeta Rusu",
     "role": "Corporate Fundraising",
-    "manager": "n3"
+    "manager": "n3",
+    "customColor": "green"
   },
   {
     "id": "n5",
     "name": "Daniela Carabus",
     "role": "Manager Fundraising",
-    "manager": "n3"
+    "manager": "n3",
+    "customColor": "green"
   },
   {
     "id": "n6",
     "name": "Mona Calinescu",
     "role": "Director/manager comunicare",
     "manager": "n29",
-    "customColor": "green",
+    "customColor": "purple",
     "levelOffset": 1
   },
   {
@@ -43,25 +59,21 @@
     "role": "Manager comunicare",
     "manager": "n29",
     "levelOffset": 1,
-    "customColor": "green"
+    "customColor": "purple"
   },
   {
     "id": "n7",
     "name": "Andreea Bucurica",
     "role": "Specialist comunicare",
-    "manager": "n6"
+    "manager": "n6",
+    "customColor": "purple"
   },
   {
     "id": "n8",
     "name": "Andreea Cucu",
     "role": "Specialist comunicare",
-    "manager": "n31"
-  },
-  {
-    "id": "n9",
-    "name": "Antoaneta Barbu",
-    "role": "Director program dizabilitate + lot",
-    "manager": "n1"
+    "manager": "n31",
+    "customColor": "purple"
   },
   {
     "id": "n10",
@@ -93,13 +105,15 @@
     "name": "Liliana Badea",
     "role": "Femeie de serviciu",
     "manager": "n10",
-    "customColor": ""
+    "customColor": "",
+    "levelOffset": 2
   },
   {
     "id": "n16",
     "name": "Cristina Pisica",
     "role": "Lucrator social (instructor TSA)",
-    "manager": "n10"
+    "manager": "n10",
+    "levelOffset": 2
   },
   {
     "id": "n17",
@@ -111,13 +125,15 @@
     "id": "n18",
     "name": "Noris Popovici",
     "role": "Receptioner Arad",
-    "manager": "n14"
+    "manager": "n14",
+    "levelOffset": 2
   },
   {
     "id": "n19",
     "name": "Georgeta Ghengea",
     "role": "Receptioner",
-    "manager": "n17"
+    "manager": "n17",
+    "levelOffset": 1
   },
   {
     "id": "n20",
@@ -183,13 +199,15 @@
     "id": "n27",
     "name": "Denisa",
     "role": "Receptioner",
-    "manager": "n14"
+    "manager": "n14",
+    "levelOffset": 2
   },
   {
     "id": "n27b",
     "name": "Florin",
     "role": "Receptioner",
-    "manager": "n14"
+    "manager": "n14",
+    "levelOffset": 2
   },
   {
     "id": "n28",
@@ -198,12 +216,6 @@
     "manager": "n1",
     "levelOffset": 1,
     "customColor": "urgent"
-  },
-  {
-    "id": "n30",
-    "name": "Mădălina",
-    "role": "Fractional CFO",
-    "manager": "n29"
   },
   {
     "id": "n29",
