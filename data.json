@@ -26,16 +26,28 @@
     "customColor": "blue"
   },
   {
-    "id": "n30",
-    "name": "Mădălina",
-    "role": "Fractional CFO",
-    "manager": "n29"
-  },
-  {
     "id": "n9",
     "name": "Antoaneta Barbu",
     "role": "Director program dizabilitate + lot",
     "manager": "n1"
+  },
+  {
+    "id": "n30",
+    "name": "Mădălina",
+    "role": "Fractional CFO",
+    "manager": "n29",
+    "description": "",
+    "levelOffset": 1,
+    "customColor": "yellow"
+  },
+  {
+    "id": "n28",
+    "name": "Adrian Badea",
+    "role": "Șef Șantier / tabără Nucșoara",
+    "manager": "n1",
+    "levelOffset": 1,
+    "customColor": "urgent",
+    "description": ""
   },
   {
     "id": "n4",
@@ -49,41 +61,35 @@
     "name": "Daniela Carabus",
     "role": "Manager Fundraising",
     "manager": "n3",
-    "customColor": "green"
-  },
-  {
-    "id": "n28",
-    "name": "Adrian Badea",
-    "role": "Șef Șantier / tabără Nucșoara",
-    "manager": "n1",
-    "levelOffset": 1,
-    "customColor": "urgent"
-  },
-  {
-    "id": "n10",
-    "name": "Alina Nedelcu",
-    "role": "Manager dizab",
-    "manager": "n9"
+    "customColor": "green",
+    "levelOffset": 1
   },
   {
     "id": "n13",
     "name": "Gratiela Dan",
     "role": "Manager dizab",
-    "manager": "n9"
+    "manager": "n9",
+    "description": "",
+    "levelOffset": 1
   },
   {
     "id": "n12",
-    "name": "Constantin Voicescu",
+    "name": "TO BE HIRED",
     "role": "Kinetoterapeut",
     "manager": "n9",
-    "levelOffset": 1
+    "levelOffset": 1,
+    "description": ""
   },
   {
     "id": "n14",
     "name": "Ionela Oprea",
-    "role": "Director centru Iași + Manager comercial",
+    "role": "Director Iași + comercial & Financiar",
     "manager": "n9",
-    "customColor": "attention"
+    "customColor": "attention",
+    "description": "",
+    "additionalManagers": [
+      "n29"
+    ]
   },
   {
     "id": "n6",
@@ -185,16 +191,16 @@
     "id": "n15",
     "name": "Liliana Badea",
     "role": "Femeie de serviciu",
-    "manager": "n10",
+    "manager": "n13",
     "customColor": "",
-    "levelOffset": 2
+    "levelOffset": 1
   },
   {
     "id": "n16",
     "name": "Cristina Pisica",
     "role": "Lucrator social (instructor TSA)",
-    "manager": "n10",
-    "levelOffset": 2
+    "manager": "n13",
+    "levelOffset": 1
   },
   {
     "id": "n18",
@@ -223,5 +229,12 @@
     "role": "Receptioner",
     "manager": "n14",
     "levelOffset": 2
+  },
+  {
+    "id": "n32",
+    "name": "Monica Bujoreanu",
+    "role": "Contabil",
+    "manager": "n14",
+    "customColor": "yellow"
   }
 ]
